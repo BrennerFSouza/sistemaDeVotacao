@@ -56,7 +56,7 @@ def exibeEmpate(maiorQuantidadeDeVotos):
     print(f"\n  Tiveram {maiorQuantidadeDeVotos} votos")
     print(f"\n  Tiveram {maiorQuantidadeDeVotos / totalVotos: .2%} votos")
 
-def calculaVencedor():
+def calcularVencedor():
     maiorQuantidadeDeVotos = 0
     candidatosComQuantidadeIgualDeVotos = 0
 
@@ -81,7 +81,7 @@ def verificaVotos():
         print("\n!!!Não houve vencedor!!!\n    Nenhum candidato obteve votos")
         return
 
-    calculaVencedor()
+    calcularVencedor()
 
 
 
@@ -92,25 +92,30 @@ print("!!! Sistema de Votação !!!\n")
 while seletorCandidato != 0:
 
     exibeCandidatos()
-    seletorCandidato = int(input("Digite o número do seu candidato: "))
+    try:
+        seletorCandidato = int(input("Digite o número do seu candidato: "))
+    except ValueError:
+        print("\n''''''''''''''''''''''''''''''''''''\n         !!!Valor Inválido!!! \n    Por favor, insira um número.\n''''''''''''''''''''''''''''''''''''")
+        continue
 
     if seletorCandidato == 0:
         print("Votação finalizada!\n\n")
         break
 
-    if 1 <= seletorCandidato <= 6:
-        totalVotos += 1
+    if seletorCandidato < 1 or seletorCandidato > 6:
+        print("\n''''''''''''''''''''''''''''''''''''''''''\n         !!!Valor Inválido!!! \n    Por favor, insira um valor válido.\n''''''''''''''''''''''''''''''''''''''''''")
+        continue
 
-        if 1 <= seletorCandidato <= 4:
-            candidatos[1][seletorCandidato - 1] += 1
-        elif seletorCandidato == 5:
-            nulo += 1
-        elif seletorCandidato == 6:
-            branco += 1
+    totalVotos += 1
+
+    if 1 <= seletorCandidato <= 4:
+        candidatos[1][seletorCandidato - 1] += 1
+    elif seletorCandidato == 5:
+        nulo += 1
+    elif seletorCandidato == 6:
+        branco += 1
 
 
-    else:
-        print("!!!Valor Inválido!!!")
 
 
 exibeTotalDeVotos()
