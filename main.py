@@ -21,8 +21,8 @@ def exibeTotalDeVotos():
     for i in range(4):
         print(f" {candidatos[0][i]} - {candidatos[1][i]}")
     print(" -----------------------------")
-    print(f"  Nulos - {nulo}")
-    print(f"  Brancos - {branco}")
+    print(f" Nulos - {nulo}")
+    print(f" Brancos - {branco}")
 
     print(f"\n VOTOS CONTABILIZADOS: {totalVotos}")
 
@@ -41,9 +41,11 @@ def exibevencedor(maiorQuantidadeDeVotos):
     print("\n!!!Vencedor!!!\n")
     for i in range(4):
         if candidatos[1][i] == maiorQuantidadeDeVotos:
-            print(candidatos[0][i])
-            print(f"  Quantidade de Votos:  {candidatos[1][i]}")
-            print(f"\n  Tiveram {maiorQuantidadeDeVotos / totalVotos: .2%} votos")
+            print("***************")
+            print(f"      {candidatos[0][i]}")
+            print("***************")
+            print(f"  Quantidade de Votos: {candidatos[1][i]}")
+            print(f"\n  Teve {maiorQuantidadeDeVotos / totalVotos: .2%} dos votos")
             break
 
 def exibeEmpate(maiorQuantidadeDeVotos):
