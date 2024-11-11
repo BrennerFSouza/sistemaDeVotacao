@@ -89,7 +89,7 @@ print("!!! Sistema de Votação !!!\n")
 
 while seletorCandidato != 0:
 
-    exibeCandidatos(candidatos)
+    exibeCandidatos()
     seletorCandidato = int(input("Digite o número do seu candidato: "))
 
     if seletorCandidato == 0:
