@@ -1,4 +1,4 @@
-# Variaveis
+# Variáveis
 
 candidatos = [
     ["Ana", "Carlos", "Beatriz", "João"],
